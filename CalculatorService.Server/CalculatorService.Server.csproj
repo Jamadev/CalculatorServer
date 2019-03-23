@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\mmunoz\Desktop\DITECH\CalculatorService.Client\CalculatorService.Server\CalculatorService.Server.xml</DocumentationFile>
+    <DocumentationFile>CalculatorService.Server\CalculatorService.Server.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
