@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CalculatorService.Server</name>
+    </assembly>
+    <members>
+        <member name="T:CalculatorService.Server.Controllers.CalculatorController">
+            <summary>
+            Application controller. Handles browser requests and returns a response.
+            </summary>
+        </member>
+        <member name="F:CalculatorService.Server.Controllers.CalculatorController._calculatorService">
+            <summary>
+            Dependency injection. By creating a dependency to the interface containing the methods.
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.#ctor(CalculatorService.Server.Interfaces.ICalculatorInterface)">
+            <summary>
+            Constructor of the controller. 
+            The container resolves the dependencies in the graph and returns the fully resolved service.
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.Add(CalculatorService.Server.Models.AdditionModel)">
+            <summary>
+            Adds two or more operands and retrieve the result
+            </summary>
+            <param name="addends"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.Sub(CalculatorService.Server.Models.SubstractionModel)">
+            <summary>
+            Sub two operands and retrieve the result.
+            </summary>
+            <param name="substraction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.Mult(CalculatorService.Server.Models.MultiplicationModel)">
+            <summary>
+            Multiply two or more operands and retrieve the result.
+            </summary>
+            <param name="factors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.Div(CalculatorService.Server.Models.DivisionModel)">
+            <summary>
+            Divide two operands and retrieve the result.
+            </summary>
+            <param name="division"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.Sqrt(CalculatorService.Server.Models.SqrtModel)">
+            <summary>
+            Square root a number and retrieve the result.
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Controllers.CalculatorController.FindJournal(CalculatorService.Server.Models.QueryModel)">
+            <summary>
+            Request all operations for a TrackingId  since the last application restart.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CalculatorService.Server.Interfaces.ICalculatorInterface">
+            <summary>
+            Definition of methods.
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.Addition(CalculatorService.Server.Models.AdditionModel,System.String)">
+            <summary>
+            Addition of two or more numeric operands
+            </summary>
+            <param name="addends"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.Substraction(CalculatorService.Server.Models.SubstractionModel,System.String)">
+            <summary>
+            Subtraction of two numeric operands
+            </summary>
+            <param name="substraction"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.Multiplication(CalculatorService.Server.Models.MultiplicationModel,System.String)">
+            <summary>
+            Multiply of two or more numeric operands
+            </summary>
+            <param name="factors"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.Division(CalculatorService.Server.Models.DivisionModel,System.String)">
+            <summary>
+            Division of two or more numeric operands
+            </summary>
+            <param name="division"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.Sqrt(CalculatorService.Server.Models.SqrtModel,System.String)">
+            <summary>
+            Square root of a numeric operand
+            </summary>
+            <param name="sqrt"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Interfaces.ICalculatorInterface.FindJournal(CalculatorService.Server.Models.QueryModel)">
+            <summary>
+            Query journal entries by TrackingId
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CalculatorService.Server.Models.AdditionModel">
+            <summary>
+            Data transfer object for receiving data of an addition.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.AdditionModel.Addends">
+            <summary>
+            Property of the class and its attributes.
+            Array of numbers being added.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.DivisionModel">
+            <summary>
+            Data transfer object for receiving data of a division.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.DivisionModel.Dividend">
+            <summary>
+            Property of the class and its attributes.
+            Number to be divided.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.DivisionModel.Divisor">
+            <summary>
+            Property of the class and its attributes.
+            Number dividing.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.MultiplicationModel">
+            <summary>
+             Data transfer object for receiving data of a multiplication.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.MultiplicationModel.Factors">
+            <summary>
+            Property of the class and its attributes.
+            Array of numbers being multiplied.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.QueryModel">
+            <summary>
+            Data transfer object for receiving data for finding an specified journal.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.QueryModel.Id">
+            <summary>
+            Property of the class and its attributes.
+            The TrackingId for which journal should be queried against.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.SqrtModel">
+            <summary>
+             Data transfer object for receiving data of the square root function.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.SqrtModel.Number">
+            <summary>
+            Property of the class and its attributes.
+            Input of the square root mathematical function.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.SubstractionModel">
+            <summary>
+            Data transfer object for receiving data of a substraction.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.SubstractionModel.Minuend">
+            <summary>
+            Property of the class and its attributes.
+            Minuend of the arithmetic subtraction.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.SubstractionModel.Subtrahend">
+            <summary>
+            Property of the class and its attributes.
+            Subtrahend of the arithmetic subtraction.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.Helpers.LogModel">
+            <summary>
+            Class for defining the structure of logs storage and in which journals are kept.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.LogModel.Operation">
+            <summary>
+            Refers to the type of arithmetic operation.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.LogModel.Calculation">
+            <summary>
+            The operation made and its result.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.LogModel.Date">
+            <summary>
+            Date and time in which the calculation was effected. 
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.Helpers.MicroserviceException">
+            <summary>
+            Class for returning exceptions of the server
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.MicroserviceException.ErrorCode">
+            <summary>
+            Type of error.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.MicroserviceException.ErrorStatus">
+            <summary>
+            Http status code associated to this error.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.Helpers.MicroserviceException.ErrorMessage">
+            <summary>
+            Inner message of the exception.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.AdditionResponseModel">
+            <summary>
+            Structure of the addition response in case the operation was correctly effected.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.AdditionResponseModel.Sum">
+            <summary>
+            Arithmetic operation result.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.DivisionResponseModel">
+            <summary>
+            Structure of the division response in case the operation was correctly effected.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.DivisionResponseModel.Quotient">
+            <summary>
+            Arithmetic operation result.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.DivisionResponseModel.Remainder">
+            <summary>
+            The remainder of the arithmetic division.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.MultiplicationResponseModel">
+            <summary>
+            Structure of the multiplication response in case the operation was correctly effected.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.MultiplicationResponseModel.Product">
+            <summary>
+            Arithmetic operation result.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.QueryResponseModel">
+            <summary>
+            Response for a successful request of the journal history.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.QueryResponseModel.Operations">
+            <summary>
+            List of all the operations performed with the specified TrackingId.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.SqrtResponseModel">
+            <summary>
+            Structure of the square root response in case the operation was correctly effected.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.SqrtResponseModel.Square">
+            <summary>
+            Arithmetic operation result.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Models.SubstractionResponseModel">
+            <summary>
+            Structure of the substraction response in case the operation was correctly effected.
+            </summary>
+        </member>
+        <member name="P:CalculatorService.Server.Models.SubstractionResponseModel.Difference">
+            <summary>
+            Arithmetic operation result.
+            </summary>
+        </member>
+        <member name="T:CalculatorService.Server.Program">
+            <summary>
+            This class is the entry point of the application
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Program.Main(System.String[])">
+            <summary>
+            Implementation of host configuration
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:CalculatorService.Server.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Host configuration
+            </summary>
+            <param name="args">argumentos</param>
+            <returns></returns>
+        </member>
+        <member name="T:CalculatorService.Server.Services.CalculatorService">
+            <summary>
+            Implementation of the interface's methods. 
+            </summary>
+        </member>
+        <member name="F:CalculatorService.Server.Services.CalculatorService.Journal">
+            <summary>
+            Journal where the operations are saved in every request that requires so.
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.Addition(CalculatorService.Server.Models.AdditionModel,System.String)">
+            <summary>
+            Implementation of addition method.
+            </summary>
+            <param name="addends"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.Division(CalculatorService.Server.Models.DivisionModel,System.String)">
+            <summary>
+            Implementation of division method.
+            </summary>
+            <param name="division"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.Multiplication(CalculatorService.Server.Models.MultiplicationModel,System.String)">
+            <summary>
+            Implementation of multiplication method.
+            </summary>
+            <param name="factors"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.Sqrt(CalculatorService.Server.Models.SqrtModel,System.String)">
+            <summary>
+            Implementation of square root method.
+            </summary>
+            <param name="sqrt"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.Substraction(CalculatorService.Server.Models.SubstractionModel,System.String)">
+            <summary>
+            Implementation of substraction method.
+            </summary>
+            <param name="substraction"></param>
+            <param name="trackingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculatorService.Server.Services.CalculatorService.FindJournal(CalculatorService.Server.Models.QueryModel)">
+            <summary>
+            Implementation of journal method.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CalculatorService.Server.Startup">
+            <summary>
+            This class is the entry point of the application, configures the request 
+            pipeline which handles all requests made
+            </summary>
+        </member>
+        <member name="M:CalculatorService.Server.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Adds services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:CalculatorService.Server.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Defines how the application will respond on each HTTP request
+            Configures middleware in HTTP pipeline
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
