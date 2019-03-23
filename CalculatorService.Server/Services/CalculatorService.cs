@@ -92,7 +92,7 @@ namespace CalculatorService.Server.Services
         public MultiplicationResponseModel Multiplication(MultiplicationModel factors, string trackingId)
         {
             //Calculates the product of the numbers in the array
-            int product = 0;
+            int product = 1;
             foreach (int i in factors.Factors)
             {
                 product *= i;

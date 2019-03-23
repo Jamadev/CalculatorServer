@@ -234,7 +234,7 @@ namespace CalculatorService.Client
             string methodUrl = "calculator/sub";
 
             var result = await ExecuteHttpRequest<object, JObject>(content, methodUrl, trackingId.Trim().ToLower());
-            var subresult = result.Property("Difference");
+            var subresult = result.Property("difference");
             if (subresult == null)
             {
                 Console.WriteLine(result.ToString());
@@ -280,7 +280,7 @@ namespace CalculatorService.Client
             };
             string methodUrl = "calculator/div";
             var result = await ExecuteHttpRequest<object, JObject>(content, methodUrl, trackingId.Trim().ToLower());
-            var quotient = result.Property("Quotient");
+            var quotient = result.Property("quotient");
             var remainder = result.Property("remainder");
 
             if (quotient == null)
@@ -323,9 +323,9 @@ namespace CalculatorService.Client
             {
                 Factors = numbers
             };
-            string methodUrl = "calculator/mul";
+            string methodUrl = "calculator/mult";
             var result = await ExecuteHttpRequest<object, JObject>(content, methodUrl, trackingId.Trim().ToLower());
-            var mulresult = result.Property("Product");
+            var mulresult = result.Property("product");
 
             if (mulresult == null)
             {

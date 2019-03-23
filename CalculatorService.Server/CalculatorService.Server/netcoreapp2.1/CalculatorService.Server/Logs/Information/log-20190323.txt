@@ -1,0 +1,7 @@
+Calculator::Sub:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Sub:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Add:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Mul:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Mul:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Mul:: CalculatorService.Server.Models.Helpers.LogModel
+Calculator::Div:: CalculatorService.Server.Models.Helpers.LogModel
